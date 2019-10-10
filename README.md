@@ -1,28 +1,55 @@
-# Getting Started With Schematics
+# angular-storybook-schematics
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+Angular schematics which automatically adds new components created with `ng generate component` to the [Storybook](https://storybook.js.org/).
 
-### Testing
+A modified and updated version of [kimamula's version](https://github.com/kimamula/ngx-schematics-for-storybook)
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+All credits goes to [kimamula](https://github.com/kimamula)
 
-Check the documentation with
-```bash
-schematics --help
+[![NPM version][npm-image]][npm-url]
+
+## Configure
+
+To use ngx-schematics-for-storybook as the default collection in your Angular CLI project, add it to your angular.json:
+
+```sh
+ng config cli.defaultCollection ngx-schematics-for-storybook
 ```
 
-### Unit Testing
+The ngx-schematics-for-storybook extend the default @schematics/angular collection. If you want to set defaults for schematics such as generating components with scss file, you must change the schematics package name from @schematics/angular to ngx-schematics-for-storybook in angular.json:
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
-
-### Publishing
-
-To publish, simply do:
-
-```bash
-npm run build
-npm publish
+```json
+"schematics": {
+  "ngx-schematics-for-storybook:component": {
+    "styleext": "scss"
+  }
+}
 ```
 
-That's it!
- 
+## Usage
+
+```sh
+# if you use ngx-schematics-for-storybook as the default collection
+$ ng generate component bar
+CREATE src/app/bar/bar.component.scss (0 bytes)
+CREATE src/app/bar/bar.component.html (22 bytes)
+CREATE src/app/bar/bar.component.spec.ts (607 bytes)
+CREATE src/app/bar/bar.component.ts (258 bytes)
+CREATE src/app/bar/bar.stories.ts (376 bytes)
+
+# if you do not use ngx-schematics-for-storybook as the default collection
+$ ng generate ngx-schematics-for-storybook:component bar
+```
+
+In addition to the ordinary [`ng generate component`](https://github.com/angular/angular-cli/wiki/generate-component), the above command generates a `.stories.ts` file for the created component.
+
+All the options for the ordinary `ng generate component` is available, as well as:
+
+- `--noStory`
+  - Skips creating a story for the created component
+- `--useTemplate`
+  - Uses a template string (e.g. `` template: `<app-foo></app-foo>` ``) instead of a component class (e.g. `component: FooComponent`) in the storybook
+- `--tagAsLabel`
+  - Uses a tag string (e.g. `<app-foo>`) as a label instead of a component class name (e.g. `FooComponent`) in the storybook
+- `--replacePath`
+  - Replaces the path of the story with a stringified array of `{ from: string, to: string }` which is to be used as `path.replace(new RegExp(from), to)`
