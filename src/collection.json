@@ -2,10 +2,10 @@
   "extends": ["@schematics/angular"],
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "angular-storybook": {
-      "description": "A blank schematic.",
-      "factory": "./angular-storybook",
-      "schema": "./angular-storybook/schema.json"
+    "component": {
+      "description": "Creates a component and add a story for it.",
+      "factory": "./component",
+      "schema": "./component/schema.json"
     }
   }
 }
