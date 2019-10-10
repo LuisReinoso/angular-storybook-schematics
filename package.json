@@ -1,5 +1,5 @@
 {
-  "name": "angular-storybook",
+  "name": "@schematics/angular-storybook",
   "version": "1.0.0",
   "description": "Angular schematics which automatically adds new components created with `ng generate component` to the [Storybook](https://storybook.js.org/)",
   "scripts": {

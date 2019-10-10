@@ -10,17 +10,17 @@ All credits goes to [kimamula](https://github.com/kimamula)
 
 ## Configure
 
-To use ngx-schematics-for-storybook as the default collection in your Angular CLI project, add it to your angular.json:
+To use @schematics/angular-storybook as the default collection in your Angular CLI project, add it to your angular.json:
 
 ```sh
-ng config cli.defaultCollection ngx-schematics-for-storybook
+ng config cli.defaultCollection  @schematics/angular-storybook
 ```
 
-The ngx-schematics-for-storybook extend the default @schematics/angular collection. If you want to set defaults for schematics such as generating components with scss file, you must change the schematics package name from @schematics/angular to ngx-schematics-for-storybook in angular.json:
+The @schematics/angular-storybook extend the default @schematics/angular collection. If you want to set defaults for schematics such as generating components with scss file, you must change the schematics package name from @schematics/angular to @schematics/angular-storybook in angular.json:
 
 ```json
 "schematics": {
-  "ngx-schematics-for-storybook:component": {
+  " @schematics/angular-storybook:component": {
     "styleext": "scss"
   }
 }
@@ -29,7 +29,7 @@ The ngx-schematics-for-storybook extend the default @schematics/angular collecti
 ## Usage
 
 ```sh
-# if you use ngx-schematics-for-storybook as the default collection
+# if you use  @schematics/angular-storybook as the default collection
 $ ng generate component bar
 CREATE src/app/bar/bar.component.scss (0 bytes)
 CREATE src/app/bar/bar.component.html (22 bytes)
@@ -37,8 +37,8 @@ CREATE src/app/bar/bar.component.spec.ts (607 bytes)
 CREATE src/app/bar/bar.component.ts (258 bytes)
 CREATE src/app/bar/bar.stories.ts (376 bytes)
 
-# if you do not use ngx-schematics-for-storybook as the default collection
-$ ng generate ngx-schematics-for-storybook:component bar
+# if you do not use  @schematics/angular-storybook as the default collection
+$ ng generate @schematics/angular-storybook:component bar
 ```
 
 In addition to the ordinary [`ng generate component`](https://github.com/angular/angular-cli/wiki/generate-component), the above command generates a `.stories.ts` file for the created component.
