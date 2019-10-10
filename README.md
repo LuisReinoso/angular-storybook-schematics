@@ -6,8 +6,6 @@ A modified and updated version of [kimamula's version](https://github.com/kimamu
 
 All credits goes to [kimamula](https://github.com/kimamula)
 
-[![NPM version][npm-image]][npm-url]
-
 ## Configure
 
 To use @schematics/angular-storybook as the default collection in your Angular CLI project, add it to your angular.json:
