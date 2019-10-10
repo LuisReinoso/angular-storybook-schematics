@@ -1,0 +1,11 @@
+{
+  "extends": ["@schematics/angular"],
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "angular-storybook": {
+      "description": "A blank schematic.",
+      "factory": "./angular-storybook",
+      "schema": "./angular-storybook/schema.json"
+    }
+  }
+}
