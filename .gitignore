@@ -15,6 +15,6 @@ yarn-error.log*
 # Mac OSX Finder files.
 **/.DS_Store
 .DS_Store
-src/angular-storybook/index_spec.d.ts
-src/angular-storybook/index.d.ts
-schematics-angular-storybook-1.0.0.tgz
+**/index_spec.d.ts
+**/index.d.ts
+*.tgz
